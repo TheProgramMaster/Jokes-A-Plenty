@@ -79,17 +79,3 @@ nav ul li a{
 nav ul li a:hover{
 	color: #683aa4;
 }
-#nextButton{
-	background-color: #a9a9a9;
-	color: white;
-	border-radius: 25%;
-	height: 200px;
-	width: 500px;
-}
-#backButton{
-	background-color: #a9a9a9;
-	color: white;
-	border-radius: 25%;
-	height: 200p;
-	width: 500px;
-}
