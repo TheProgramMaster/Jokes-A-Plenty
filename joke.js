@@ -27,7 +27,7 @@ window.speechSynthesis.onvoiceschanged = function() {
     for (let i = 0; i < voice_options.length; i++) {
         var opt = document.createElement('option');
         opt.value = i;
-        opt.innerHTML = voice_options[i].lang;
+        opt.innerHTML = voice_options[i];
         console.log(voices[i]);
         select.appendChild(opt);
     }
