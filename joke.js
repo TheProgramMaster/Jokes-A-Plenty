@@ -24,10 +24,10 @@ button.onclick = function() {
 
 window.speechSynthesis.onvoiceschanged = function() {
     voices = window.speechSynthesis.getVoices();
-    for (let i = 0; i < voices.length; i++) {
+    for (let i = 0; i < voice_options.length; i++) {
         var opt = document.createElement('option');
         opt.value = i;
-        opt.innerHTML = voices[i].lang;
+        opt.innerHTML = voice_options[i].lang;
         console.log(voices[i]);
         select.appendChild(opt);
     }
