@@ -24,10 +24,10 @@ button.onclick = function() {
 
 window.speechSynthesis.onvoiceschanged = function() {
     voices = window.speechSynthesis.getVoices();
-    for (let i = 0; i < voices.length; i++) {
+    for (let i = 0; i < voice_options.length; i++) {
         var opt = document.createElement('option');
         opt.value = i;
-        opt.innerHTML = voices[i].lang;
+        opt.innerHTML = voice_options[i].lang;
         console.log(voices[i]);
         select.appendChild(opt);
     }
@@ -45,3 +45,73 @@ function giveInfo(evt,infoName){
     document.getElementById(infoName).style.display = "block";
     evt.currentTarget.className += " active";
 }
+
+voice_options = [
+    "American",
+    "Italian",
+    "Swiss",
+    "Canadian",
+    "German",
+    "Isreali",
+    "Indonesia",
+    "British",
+    "Argentinian",
+    "Belgian",
+    "English",
+    "American",
+    "Romanian",
+    "Portugal",
+    "Spanish",
+    "Mexican",
+    "Thai",
+    "Australian",
+    "Japanese",
+    "Slovakian",
+    "Indian",
+    "Italian",
+    "Brazilian",
+    "South African",
+    "Hungarian",
+    "Taiwanese",
+    "Greek",
+    "Russian",
+    "Irish",
+    "Spanish",
+    "Norwegian",
+    "Mexican",
+    "Indian",
+    "American",
+    "Danish",
+    "Finnish",
+    "Cantonese",
+    "South African",
+    "French",
+    "Chinese",
+    "Indonesian",
+    "American",
+    "Nordic",
+    "Turkish",
+    "Korean",
+    "Russian",
+    "Polish",
+    "Czech",
+    "German",
+    "American",
+    "British",
+    "English",
+    "Spanish",
+    "Spanish-American",
+    "French",
+    "Indian",
+    "Indonesian",
+    "Italian",
+    "Japanese",
+    "Korean",
+    "Dutch",
+    "Polish",
+    "Brazilian",
+    "Russian",
+    "Chinese",
+    "Cantonese",
+    "Taiwanese"
+]
