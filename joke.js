@@ -5,7 +5,16 @@ speaking = true;
 voices = null;
 function generate_joke() {
     JokeAPI.getJokes({
-        jokeType: "single"
+        jokeType: "single",
+        Flags:{
+            "nsfw":false,
+            "religious":false,
+            "political":false,
+            "racist":false,
+            "sexist":false,
+            "explicit":false
+        },
+        "lang":"en"
       })
         .then((r) => r.json())
         .then((data) => {
