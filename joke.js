@@ -5,7 +5,16 @@ speaking = true;
 voices = null;
 function generate_joke() {
     JokeAPI.getJokes({
-        jokeType: "single"
+        jokeType: "single",
+        Flags:{
+            "nsfw":false,
+            "religious":false,
+            "political":false,
+            "racist":false,
+            "sexist":false,
+            "explicit":false
+        },
+        "lang":"en"
       })
         .then((r) => r.json())
         .then((data) => {
@@ -24,10 +33,10 @@ button.onclick = function() {
 
 window.speechSynthesis.onvoiceschanged = function() {
     voices = window.speechSynthesis.getVoices();
-    for (let i = 0; i < voice_options.length; i++) {
+    for (let i = 0; i < voices.length; i++) {
         var opt = document.createElement('option');
         opt.value = i;
-        opt.innerHTML = voice_options[i].lang;
+        opt.innerHTML = voices[i].lang;
         console.log(voices[i]);
         select.appendChild(opt);
     }
@@ -45,72 +54,3 @@ function giveInfo(evt,infoName){
     document.getElementById(infoName).style.display = "block";
     evt.currentTarget.className += " active";
 }
-voice_options = [
-    "American",
-    "Italian",
-    "Swiss",
-    "Canadian",
-    "German",
-    "Isreali",
-    "Indonesia",
-    "British",
-    "Argentinian",
-    "Belgian",
-    "English",
-    "American",
-    "Romanian",
-    "Portugal",
-    "Spanish",
-    "Mexican",
-    "Thai",
-    "Australian",
-    "Japanese",
-    "Slovakian",
-    "Indian",
-    "Italian",
-    "Brazilian",
-    "South African",
-    "Hungarian",
-    "Taiwanese",
-    "Greek",
-    "Russian",
-    "Irish",
-    "Spanish",
-    "Norwegian",
-    "Mexican",
-    "Indian",
-    "American",
-    "Danish",
-    "Finnish",
-    "Cantonese",
-    "South African",
-    "French",
-    "Chinese",
-    "Indonesian",
-    "American",
-    "Nordic",
-    "Turkish",
-    "Korean",
-    "Russian",
-    "Polish",
-    "Czech",
-    "German",
-    "American",
-    "British",
-    "English",
-    "Spanish",
-    "Spanish-American",
-    "French",
-    "Indian",
-    "Indonesian",
-    "Italian",
-    "Japanese",
-    "Korean",
-    "Dutch",
-    "Polish",
-    "Brazilian",
-    "Russian",
-    "Chinese",
-    "Cantonese",
-    "Taiwanese"
-]
