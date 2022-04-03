@@ -18,7 +18,7 @@ function generate_joke() {
 
 button.onclick = function() {
     if (!synth.speaking) {
-        generate_joke();
+        generate_joke(blacklistFlags="nsfw,religious,political,racist,sexist,explicit");
     }
 }
 
